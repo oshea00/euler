@@ -1,15 +1,8 @@
 
-names = file('p022_names.txt','r').readline().split(",")
-names = sorted([n.replace('"','').upper() for n in names])
-
-def pos(a):
-    return int(ord(a) - 64)
-
-def wordscore(word):
-    return sum([pos(l) for l in name])
+names = sorted([n.replace('"','').upper() for n in open('words.txt','r').readline().split(",")])
 
 totalscore = 0
 for i,name in enumerate(names):
-    wordscore = sum([pos(l) for l in name])
+    wordscore = sum([int(ord(a) - 64) for a in name])
     totalscore += wordscore * (i+1)
 print(totalscore)
