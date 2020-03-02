@@ -13,12 +13,10 @@ class UnionFind:
 		if not this.connected(a,b):
 			ia = this.find(a)
 			ib = this.find(b)
-			if this.componentSize[a]<this.componentSize[b]:
-				this.components[a]=b
-				this.componentSize[b] += this.componentSize[a]
-			else:
-				this.components[b]=a
-				this.componentSize[a] += this.componentSize[b]
+			if this.componentSize[ia] > this.componentSize[ib]:
+				ia, ib = ib, ia
+			this.components[ia]=ib
+			this.componentSize[ib] += this.componentSize[ia]
 			this.componentCount -= 1
 
 class Graph:
