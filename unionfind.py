@@ -20,15 +20,26 @@ class UnionFind:
 				this.components[b]=a
 				this.componentSize[a] += this.componentSize[b]
 			this.componentCount -= 1
-		
+
+class Graph:
+	def __init__(this,A,V,E):
+		this.A = A
+		this.V = V
+		this.E = E
+	def display(this):
+		for e in E:
+			print(f'{this.A[e[0]]}-{this.A[e[1]]}')
+A = ['A','B','C','D','E','F','G']
 V = [0,1,2,3,4,5,6]
 E = [(0,1),(0,2),(0,3),(1,2),(2,3),(4,5),(5,6)]
 
 from console import clear
 clear()
+g = Graph(A,V,E)
 n = UnionFind(len(V))
 for e in E:
 	n.union(e[0],e[1])
+g.display()
 print(n.components)
 print(n.componentSize)
 print(n.componentCount)
