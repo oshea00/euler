@@ -31,5 +31,6 @@ for e in E:
 	n.union(e[0],e[1])
 print(n.components)
 print(n.componentSize)
+print(n.componentCount)
 print(n.connected(0,3))
 print(n.connected(0,5))
