@@ -27,6 +27,7 @@ class Graph:
 	def display(this):
 		for e in E:
 			print(f'{this.A[e[0]]}-{this.A[e[1]]}')
+			
 A = ['A','B','C','D','E','F','G']
 V = [0,1,2,3,4,5,6]
 E = [(0,1),(0,2),(0,3),(1,2),(2,3),(4,5),(5,6)]
