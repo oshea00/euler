@@ -35,7 +35,7 @@ V = ['A','B','C','D']
 E = [(0,1,1),(0,2,4),(0,3,3),
 	(1,3,2),(2,3,5)]
 
-g = UnionFind(len(E))
+g = UnionFind(len(V))
 span = []
 S = sorted(E,key=lambda x: x[2])
 for e in S:
